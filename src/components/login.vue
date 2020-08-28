@@ -1,8 +1,9 @@
 <template>
   <div id="loginContainer">
-    <form>
-      <h3>Member Login</h3>
-      <text-box-component
+    <section id="content">
+       <h3>Member Login</h3>
+       <form>
+        <text-box-component
         v-bind:placeholder="usernamePlaceholder"
         v-model="model.username"
       />
@@ -10,16 +11,18 @@
         v-bind:placeholder="passwordPlaceholder"
         v-model="model.password"
       />
-      <div class="remember">
-        <check-box-component
+      <div class="login-bottom">
+         <check-box-component
           v-bind:label="checkboxLabel"
           v-model="model.rememberMe"
         />
-        <a href="/"><i>Forgot Password</i></a>
+        <a class="pull-right" href="/"><i>Forgot Password?</i></a>
       </div>
-
-      <div><button type="submit" v-on:click="onSubmit">LOGIN</button></div>
-    </form>
+        <button type="submit" v-on:click="onSubmit">LOGIN</button>
+        
+        </form>
+    </section>
+    
   </div>
 </template>
 <script>
@@ -87,17 +90,30 @@ export default {
   top: 50%;
   left: 50%;
   width: 30em;
-  height: 18em;
+  height: 20em;
   margin-top: -9em; /*set to a negative number 1/2 of your height*/
   margin-left: -15em; /*set to a negative number 1/2 of your width*/
   background-color: #ffffff;
   border-radius: 5px;
 }
+#content{
+  display: block;
+    padding: 30px 40px;
+}
+.input-container{
+  margin: 15px 0;
+  position: relative;
+}
+.login-bottom{
+  margin: 15px 0;
+  position: relative;
+  text-align: left;
+}
 h3 {
   color: #595353;
 }
 a {
-  color: #595353;
+  color: #D0D1D2;
   font-size: 14px;
   float: right;
 }
@@ -109,13 +125,10 @@ button {
   padding: 10px;
   border-radius: 5px;
   float: left;
-  margin-left: 100px;
+  
 }
-.remember {
-  color: #a7a7aa;
-  margin: 2px;
-  padding: 10px;
-  width: 250px;
-  margin-left: 70px;
+
+.submit-container{
+  margin: 20px 0 0 75px;
 }
 </style>

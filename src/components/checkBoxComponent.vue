@@ -1,12 +1,14 @@
 <template>
-  <div class="check-box">
+  <div class="checkbox-container">
     <input
       type="checkbox"
-      id="checkbox"
+      class="checkbox"
       v-bind:value="value"
       @click="updateValue($event.target.checked)"
     />
     <label for="checkbox">{{ this.label }}</label>
+
+    
   </div>
 </template>
 <script>
@@ -26,19 +28,17 @@ export default {
 };
 </script>
 <style>
-.check-box {
+.checkbox-container {
   display: inline-block;
-  margin-left: 0;
+  
 }
 input[type="checkbox"] {
   border: 1px solid #a7a7aa;
 }
-.checkbox input[type="checkbox"]:checked {
-  background-color: #ffffff;
-  color: #a7a7aa;
-}
-.check-box label {
-  font: 400 13.3333px Arial;
-  color: #a7a7aa;
+
+.checkbox-container label {
+      font-size: 14px;
+    color: #D0D1D2;
+    margin-left: 5px;
 }
 </style>
